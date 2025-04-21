@@ -21,8 +21,7 @@ class SSEWebWorld(WebWorld):
 
 class SSEWorld(World):
     """
-    The second Super Mario game to feature 3D gameplay. Coupled with F.L.U.D.D. (a talking water tank that can be used
-    as a jetpack), Mario must clean the graffiti off of Delfino Isle and return light to the sky.
+    The Adventure mode campaign of Super Smash Bros. Brawl, Nintendo characters from all over come together to destroy the looming threat of subspace.
     """
     game = "Super Smash Bros. Brawl: The Subspace Emissary"
     web = SSEWebWorld()
@@ -34,9 +33,6 @@ class SSEWorld(World):
 
     item_name_to_id = item_table
     location_name_to_id = location_table
-
-    corona_goal = 50
-    possible_shines = 0
 
     def generate_early(self):
         #TODO: start with 4 random fighters and 1 stage, if applicable
