@@ -5,8 +5,6 @@ import collections
 import time
 from typing import Optional
 
-import dolphin_memory_engine
-
 from dataclasses import dataclass
 
 import ModuleUpdate

@@ -72,26 +72,24 @@ class SSEWorld(World):
         return "Sticker"
 
     def set_rules(self):
-        if self.options.layout_mode.value == 0:
+        if self.options.world_layout.value == 0:
             for i, stage in enumerate(_stage_names):
                 self.get_location(stage).access_rule = characters_layout_rules[i]
-        elif self.options.layout_mode.value == 1:
+        elif self.options.world_layout.value == 1:
             for stage in _stage_names:
                 self.get_location(stage).access_rule = get_stages_layout_rule(self, stage)
         self.multiworld.completion_condition[self.player] = lambda state: state.has("Victory", self.player)
 
     def fill_slot_data(self) -> Dict[str, Any]:
         return {
-            "layout_mode": self.options.layout_mode.value,
-            #"trainer_behaviour": self.options.trainer_behaviour.value,
-            #"samus_behaviour": self.options.samus_behaviour.value,
-            #"zelda_behaviour": self.options.zelda_behaviour.value,
+            "world_layout": self.options.world_layout.value,
+            "spilt_characters": self.options.split_characters.value,
             "secret_character_shuffle": self.options.secret_character_shuffle.value,
-            "hoarde_shuffle": self.options.hoarde_shuffle.value,
+            "split_great_maze": self.options.split_great_maze.value,
             "great_maze_requirements": self.options.great_maze_requirements.value,
-            "maze_fighter_percentage": self.options.maze_fighter_percentage.value,
+            "maze_character_amount": self.options.maze_character_amount.value,
             "tabuu_requirements": self.options.tabuu_requirements.value,
-            "tabuu_fighter_percentage": self.options.tabuu_fighter_percentage.value,
+            "tabuu_character_amount": self.options.tabuu_character_amount.value,
             "tabuu_boss_amount": self.options.tabuu_boss_amount.value,
         }
 
