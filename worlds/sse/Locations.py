@@ -29,6 +29,7 @@ class SSELocationData(NamedTuple):
     can_create: Callable[["SSEWorld"], bool] = lambda world: True
     address: Optional[int] = None
 
+# TODO: add stage_ids
 location_data_table: Dict[str, SSELocationData] = {
     # Midair Stadium
     "Midair Stadium - Stadium Brawl": SSELocationData(
